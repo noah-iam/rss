@@ -7,7 +7,15 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 
+from rss.spiders.mongo.connection import mongoConnect
+
 
 class RssPipeline:
+    def __init__(self):
+        db = mongoConnect()
+        coll = db['rss-feed']
+        self.collection = coll
+
     def process_item(self, item, spider):
+        self.collection.insert_one(item)
         return item
