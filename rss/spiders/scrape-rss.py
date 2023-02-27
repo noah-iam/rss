@@ -3,7 +3,7 @@ from rss.spiders.rsshelper.helper import getUrls, prepare
 
 
 class ScrapeRssSpider(scrapy.Spider):
-    name = 'scrape-rss'
+    name = 'rss'
     allowed_domains = ['*.*']
 
     def start_requests(self):
