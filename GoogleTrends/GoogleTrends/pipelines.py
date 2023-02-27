@@ -5,10 +5,10 @@
 
 
 # useful for handling different item types with a single interface
+from itemadapter import ItemAdapter
 import pymongo
 
-
-class RssPipeline:
+class GoogletrendsPipeline:
 
     def __init__(self, mongo_uri, mongo_db, collection_name, rss_url):
         self.db = None
@@ -25,7 +25,7 @@ class RssPipeline:
             mongo_uri=crawler.settings.get('MONGO_URI'),
             collection_name=crawler.settings.get("RSS_DATA"),
             mongo_db=crawler.settings.get('MONGO_DATABASE'),
-            rss_url=crawler.settings.get("RSS_DATA")
+            rss_url=crawler.settings.get("TRENDS_DATA")
         )
 
     def open_spider(self, spider):
@@ -39,3 +39,4 @@ class RssPipeline:
     def process_item(self, item, spider):
         self.db[self.collection_name].insert_one(item)
         return item
+

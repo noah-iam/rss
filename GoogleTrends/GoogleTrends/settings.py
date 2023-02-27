@@ -1,4 +1,4 @@
-# Scrapy settings for rss project
+# Scrapy settings for GoogleTrends project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,13 +7,13 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'rss'
+BOT_NAME = 'GoogleTrends'
 
-SPIDER_MODULES = ['rss.spiders']
-NEWSPIDER_MODULE = 'rss.spiders'
+SPIDER_MODULES = ['GoogleTrends.spiders']
+NEWSPIDER_MODULE = 'GoogleTrends.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'rss (+http://www.yourdomain.com)'
+# USER_AGENT = 'GoogleTrends (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -44,13 +44,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'rss.middlewares.RssSpiderMiddleware': 543,
+#    'GoogleTrends.middlewares.GoogletrendsSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'rss.middlewares.RssDownloaderMiddleware': 543,
+#    'GoogleTrends.middlewares.GoogletrendsDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -61,9 +61,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    'rss.pipelines.RssPipeline': 300,
-}
+# ITEM_PIPELINES = {
+#    'GoogleTrends.pipelines.GoogletrendsPipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -86,8 +86,7 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# DB
 MONGO_DATABASE = "rss"
 MONGO_URI = "mongodb://root:rootpassword@localhost:27017"
-RSS_DATA = "rss-feed"
-RSS_URLS = "rss-urls"
+TRENDS_DATA = "trends-data"
+RSS_URLS = "google_trends_rss"
