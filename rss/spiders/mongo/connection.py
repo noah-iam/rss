@@ -2,16 +2,18 @@ import os
 import urllib
 from configparser import ConfigParser
 from pathlib import Path
-import pymongo
-
+import pymongo as pm
+from scrapy.utils.project import get_project_settings
 import pymongo
 
 parser = ConfigParser()
 parser.read(os.path.join(os.path.dirname(__file__), 'config.ini'))
 home = str(Path.home())
 
+settings = get_project_settings()
+
 
 def mongoConnect():
-    client = pymongo.MongoClient('mongodb://root:rootpassword@localhost:27017')
-    database = client['rss']
+    client = pm.MongoClient(settings.get("MONGO_URI"))
+    database = client[settings.get("MONGO_DATABASE")]
     return database

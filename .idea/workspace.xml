@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60b353a-0ef7-4efb-ba84-0f5608b66cb3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/pipelines.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/GoogleTrends/spiders/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoogleTrends/scrapy.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss/spiders/scrape-rss.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/spiders/scrape-rss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/spiders/mongo/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/spiders/mongo/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/spiders/rsshelper/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/spiders/rsshelper/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/spiders/scrape-rss.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/spiders/ScrapeRSS.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,17 +40,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/pratikmishra/PycharmProjects/rss/GoogleTrends/GoogleTrends/spiders",
+    "last_opened_file_path": "/Users/pratikmishra/PycharmProjects/rss/rss/spiders/rsshelper",
     "settings.editor.selected.configurable": "copyright"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rss/spiders/rsshelper" />
       <recent name="$PROJECT_DIR$/GoogleTrends/GoogleTrends/spiders" />
       <recent name="$PROJECT_DIR$/GoogleTrends/GoogleTrends" />
       <recent name="$PROJECT_DIR$/rss/spiders/mongo" />
       <recent name="$PROJECT_DIR$/rss" />
-      <recent name="$PROJECT_DIR$/com/rss/feed" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/GoogleTrends/GoogleTrends/spiders" />
@@ -62,8 +60,29 @@
       <recent name="$PROJECT_DIR$/rss-feed" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gtrends">
-    <configuration name="cndline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.crawler">
+    <configuration name="ScrapeRSS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rss" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rss/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rss/spiders/ScrapeRSS.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="crawler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -71,13 +90,13 @@
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="SDK_NAME" value="Python 3.9 (rss)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GoogleTrends/GoogleTrends" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rss/spiders" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cndline.py" />
-      <option name="PARAMETERS" value="scrapy crawl Go" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rss/spiders/crawler.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -149,25 +168,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scrape-rss" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="rss" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rss/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rss/spiders/scrape-rss.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="pm" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -176,29 +184,27 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.ScrapeRSS" />
+      <item itemvalue="Python.crawler" />
       <item itemvalue="Python.gtrends" />
       <item itemvalue="Python.scrape-gt" />
-      <item itemvalue="Python.cndline" />
-      <item itemvalue="Python.scrape-rss" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.crawler" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python.gtrends" />
         <item itemvalue="Python.gtrends" />
         <item itemvalue="Python.scrape-gt" />
-        <item itemvalue="Python.cndline" />
-        <item itemvalue="Python.scrape-rss" />
       </list>
     </recent_temporary>
   </component>

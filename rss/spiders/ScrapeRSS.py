@@ -1,5 +1,8 @@
 import scrapy
-from rss.spiders.rsshelper.helper import getUrls, prepare
+from twisted.internet import reactor
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.project import get_project_settings
+from rsshelper.helper import getUrls, prepare
 
 
 class ScrapeRssSpider(scrapy.Spider):

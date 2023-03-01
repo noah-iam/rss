@@ -1,9 +1,12 @@
-from rss.spiders.mongo.connection import mongoConnect
+from mongo.connection import mongoConnect
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import calendar
 import time
 import hashlib
+from scrapy.utils.project import get_project_settings
+
+settings = get_project_settings()
 
 
 def getText(link):
@@ -38,9 +41,9 @@ def prepare(post):
 
 def getUrls():
     db = mongoConnect()
-    coll = db['rss-url']
+    coll = db[settings.get("RSS_URLS")]
     dictRSS = coll.find_one()
-    rss_urls = dictRSS['urls']
+    rss_urls = dictRSS[settings.get("URL_FIELD")]
     return rss_urls
 
 

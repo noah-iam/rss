@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'rss.spiders'
 # USER_AGENT = 'rss (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -77,7 +77,8 @@ ITEM_PIPELINES = {
 # AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
 # AUTOTHROTTLE_DEBUG = False
-
+LOG_ENABLED = True
+LOG_LEVEL = "ERROR"
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 # HTTPCACHE_ENABLED = True
@@ -91,3 +92,5 @@ MONGO_DATABASE = "rss"
 MONGO_URI = "mongodb://root:rootpassword@localhost:27017"
 RSS_DATA = "rss-feed"
 RSS_URLS = "rss-urls"
+CRAWL_TIME = 300
+URL_FIELD = "urls"
