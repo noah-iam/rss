@@ -2,7 +2,7 @@ from twisted.internet import reactor
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
 from ScrapeRSS import ScrapeRssSpider
-from rsshelper.helper import getTimeStamp
+from rsshelper.helper import getTime
 
 settings = get_project_settings()
 
@@ -13,7 +13,6 @@ def crawl_job():
     Return Deferred, which will execute after crawl has completed.
     """
     runner = CrawlerRunner(settings)
-    print("Crawl Job Scheduled %s", str(getTimeStamp()))
     return runner.crawl(ScrapeRssSpider)
 
 
@@ -21,7 +20,7 @@ def schedule_next_crawl(null, sleep_time):
     """
     Schedule the next crawl
     """
-    print("Crawl Job Scheduled %s", str(getTimeStamp()))
+    print("Crawl Job Scheduled %s", str(getTime()))
     reactor.callLater(sleep_time, crawl)
 
 

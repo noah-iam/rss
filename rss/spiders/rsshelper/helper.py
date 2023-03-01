@@ -1,3 +1,5 @@
+import datetime
+
 from mongo.connection import mongoConnect
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
@@ -5,6 +7,7 @@ import calendar
 import time
 import hashlib
 from scrapy.utils.project import get_project_settings
+from datetime import datetime as dt
 
 settings = get_project_settings()
 
@@ -21,6 +24,10 @@ def getTimeStamp():
     current_GMT = time.gmtime()
     time_stamp = calendar.timegm(current_GMT)
     return time_stamp
+
+
+def getTime():
+    return dt.now()
 
 
 def prepare(post):
