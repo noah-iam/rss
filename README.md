@@ -1,19 +1,28 @@
-***To Run Scrapy RSS:***
+# Setup Project
+## Dependencies
+1. > pip install pymongo
+2. > pip install scrapy
+3. > pip install < Name of the Module if missing >
+   
 
-** Update Mongo Connection:**
+# Run Scrapy RSS
+
+## Update Mongo Connection:
 1. Go to rss/rss/settings.py
 2. Change the Mongo URI as per your MONGO DB URI
 
-**To  change crawl frequency :**
-1. go to rss/rss/settings.py
-2. update 
-   3. CRAWL_TIME = 300 in Second ( You can Update)
+## To  change crawl frequency :
+1. Go to rss/rss/settings.py]
+2. update CRAWL_TIME = 300 (In Seconds)
 
-**To Run the Scrapy :**
+## To Run the Scrapy
 
-1. go to rss/spiders/crawler.py
+1. Go to rss/spiders
 2. Run the command in terminal 
-   3. *python crawl.py*
+  > python crawl.py
 
+
+## Reference
+> https://doc.scrapy.org/en/latest/index.html
 
 
