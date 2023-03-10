@@ -49,7 +49,9 @@ def prepare(post):
 def getUrls():
     db = mongoConnect()
     coll = db[settings.get("RSS_URLS")]
+    print(coll.find_one())
     dictRSS = coll.find_one()
+    print(dictRSS)
     rss_urls = dictRSS[settings.get("URL_FIELD")]
     return rss_urls
 

@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "63fbf47a26f3619026045c9f"
+  },
+  "type": "GOOGLE_TRENDS",
+  "urls": [
+    "https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN",
+    "https://trends.google.com/trends/trendingsearches/daily/rss?geo=US"
+  ]
+}

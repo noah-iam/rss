@@ -14,6 +14,10 @@ settings = get_project_settings()
 
 
 def mongoConnect():
-    client = pm.MongoClient(settings.get("MONGO_URI"))
-    database = client[settings.get("MONGO_DATABASE")]
-    return database
+    print("connecting to mongo")
+    try:
+        client = pm.MongoClient(settings.get("MONGO_URI"))
+        database = client[settings.get("MONGO_DATABASE")]
+        return database
+    except ex:
+        print("error in ̰ connecting", ex)

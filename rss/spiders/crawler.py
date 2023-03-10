@@ -3,7 +3,7 @@ from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
 from ScrapeRSS import ScrapeRssSpider
 from rsshelper.helper import getTime
-
+import logging
 settings = get_project_settings()
 
 
@@ -12,6 +12,7 @@ def crawl_job():
     Job to start spiders.
     Return Deferred, which will execute after crawl has completed.
     """
+    logging.info("Crawl Job Scheduled %s", str(getTime()))
     runner = CrawlerRunner(settings)
     return runner.crawl(ScrapeRssSpider)
 
@@ -20,7 +21,7 @@ def schedule_next_crawl(null, sleep_time):
     """
     Schedule the next crawl
     """
-    print("Crawl Job Scheduled %s", str(getTime()))
+    logging.info("Crawl Job Scheduled %s", str(getTime()))
     reactor.callLater(sleep_time, crawl)
 
 

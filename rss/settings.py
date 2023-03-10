@@ -87,8 +87,9 @@ ITEM_PIPELINES = {
 
 # DB
 MONGO_DATABASE = "rss"
-MONGO_URI = "mongodb://root:rootpassword@localhost:27017"
+#MONGO_URI = "mongodb://root:rootpassword@127.0.0.1:27017"
+MONGO_URI = "mongodb://rss-db-1"
 RSS_DATA = "rss-feed"
-RSS_URLS = "rss-urls"
+RSS_URLS = "rss-url"
 CRAWL_TIME = 300
 URL_FIELD = "urls"

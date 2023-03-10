@@ -1,0 +1,20 @@
+{
+  "_id": {
+    "$oid": "63fb6ddb26f3619026045c99"
+  },
+  "type": "NEWS",
+  "urls": [
+    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "https://indianexpress.com/syndication/",
+    "https://www.thehindu.com/rss/feeds/",
+    "https://feeds.feedburner.com/ndtvnews-india-news",
+    "https://timesofindia.indiatimes.com/rss.cms",
+    "https://www.indiatoday.in/rss/home",
+    "https://www.hindustantimes.com/rss",
+    "https://indianexpress.com/feed/",
+    "https://zeenews.india.com/rss/india-national-news.xml",
+    "https://www.news18.com/rss/india.xml",
+    "https://www.business-standard.com/rss/latest-news",
+    "https://economictimes.indiatimes.com/rssfeedsdefault.cms"
+  ]
+}
