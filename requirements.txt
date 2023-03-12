@@ -8,3 +8,4 @@ jsonschema
 pymongo==4.3.3
 Scrapy
 selenium==4.8.0
+feedparser

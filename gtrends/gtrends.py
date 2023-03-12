@@ -7,7 +7,7 @@ import time
 import hashlib
 from cleantext import clean
 
-mongoClient = pm.MongoClient('mongodb://root:rootpassword@localhost:27017')
+mongoClient = pm.MongoClient('mongodb://rss-db-1')
 db = mongoClient['rss']
 urls = db['google_trends_rss'].find_one()['urls']
 output = db['trends-feed']

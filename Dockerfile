@@ -3,5 +3,10 @@ FROM python:3.7
 RUN mkdir /rss
 WORKDIR /rss/
 ADD . /rss/
+ADD start.sh /
+
 RUN pip install -r requirements.txt
-CMD ["python", "rss/spiders/crawler.py"]
+
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
