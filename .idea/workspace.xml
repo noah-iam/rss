@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60b353a-0ef7-4efb-ba84-0f5608b66cb3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gtrends/gtrends.py" beforeDir="false" afterPath="$PROJECT_DIR$/gtrends/gtrends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setupDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/setupDB.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

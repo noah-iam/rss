@@ -1,9 +1,7 @@
 import pymongo as pm
 
-settings = get_project_settings()
-
-mongoClient = pm.MongoClient(settings.get("MONGO_URI"))
-db = mongoClient[settings.get("MONGO_DATABASE")]
+mongoClient = pm.MongoClient('mongodb://localhost:27017')
+db = mongoClient['rss']
 
 
 def main():
