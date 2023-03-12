@@ -6,8 +6,9 @@ import calendar
 import time
 import hashlib
 from cleantext import clean
+settings = get_project_settings()
 
-mongoClient = pm.MongoClient('mongodb://rss-db-1')
+mongoClient = pm.MongoClient(settings.get("MONGO_URI"))
 db = mongoClient['rss']
 urls = db['google_trends_rss'].find_one()['urls']
 output = db['trends-feed']
