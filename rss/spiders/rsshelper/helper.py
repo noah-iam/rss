@@ -30,18 +30,36 @@ def getTime():
     return dt.now()
 
 
+def remove_html_tags(text):
+    soup = BeautifulSoup(text, "html.parser")
+    stripped_text = soup.get_text(separator=" ")
+    return stripped_text
+
+
+def getCleanText(post, link):
+    if "ndtv" in link :
+        text = post.xpath('content:encoded//text()',
+                          namespaces={'content': 'http://purl.org/rss/1.0/modules/content/'})\
+            .extract_first()
+        return remove_html_tags(text)
+    else:
+        return "NA"
+
+
 def prepare(post):
     title = post.xpath('title//text()').extract_first()
     link = post.xpath('link//text()').extract_first()
     pubDate = post.xpath('pubDate//text()').extract_first()
-    text = getText(post.xpath('link//text()').extract_first())
+    text = getText(link)
+    cleanText = getCleanText(post, link)
 
     return {
         '_id': generateUniqueId(title, link, pubDate),
         'title': title,
         'link': link,
         'pubDate': pubDate,
-        'text': text,
+        'raw_text': text,
+        'clean_text': cleanText,
         'crawlTime': getTimeStamp()
     }
 

@@ -87,7 +87,7 @@ ITEM_PIPELINES = {
 
 # DB
 MONGO_DATABASE = "rss"
-MONGO_URI = "mongodb://host.docker.internal:27017/"
+MONGO_URI = "mongodb://localhost:27017/"
 #MONGO_URI = "mongodb://rss-db-1"
 RSS_DATA = "rss-feed"
 RSS_URLS = "rss-url"

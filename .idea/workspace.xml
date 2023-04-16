@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60b353a-0ef7-4efb-ba84-0f5608b66cb3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/gtrends/gtrends.py" beforeDir="false" afterPath="$PROJECT_DIR$/gtrends/gtrends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setupDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/setupDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rss/spiders/rsshelper/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/rss/spiders/rsshelper/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +33,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/pratikmishra/PycharmProjects/rss/rss/spiders/rsshelper",
-    "settings.editor.selected.configurable": "copyright"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/pratikmishra/PycharmProjects/rss/rss/spiders/rsshelper&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/rss/spiders/rsshelper" />
@@ -157,12 +159,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.crawler" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.mongodb_container: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Docker.Dockerfile" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.crawler" />
     </list>
     <recent_temporary>
       <list>
@@ -195,7 +197,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/rss/spiders/rsshelper/helper.py</url>
-          <line>54</line>
+          <line>72</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
