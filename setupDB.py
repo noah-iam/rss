@@ -29,16 +29,15 @@ def insert_RSSUrls():
             "type": "NEWS",
             "urls": [
                 "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
-                "https://indianexpress.com/syndication/",
-                "https://www.thehindu.com/rss/feeds/",
+                "https://www.thehindu.com/news/national/feeder/default.rss",
                 "https://feeds.feedburner.com/ndtvnews-india-news",
-                "https://timesofindia.indiatimes.com/rss.cms",
+                "https://timesofindia.indiatimes.com/rssfeedmostrecent.cms",
                 "https://www.indiatoday.in/rss/home",
-                "https://www.hindustantimes.com/rss",
                 "https://indianexpress.com/feed/",
                 "https://zeenews.india.com/rss/india-national-news.xml",
                 "https://www.news18.com/rss/india.xml",
-                "https://www.business-standard.com/rss/latest-news",
+                "https://www.business-standard.com/rss/home_page_top_stories.rss",
+                "https://www.business-standard.com/rss/latest.rss",
                 "https://economictimes.indiatimes.com/rssfeedsdefault.cms"
             ]
         }

@@ -1,5 +1,5 @@
 import datetime
-
+import re
 from mongo.connection import mongoConnect
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
@@ -37,12 +37,67 @@ def remove_html_tags(text):
 
 
 def getCleanText(post, link):
-    if "ndtv" in link :
-        text = post.xpath('content:encoded//text()',
-                          namespaces={'content': 'http://purl.org/rss/1.0/modules/content/'})\
-            .extract_first()
-        return remove_html_tags(text)
-    else:
+    try:
+        if "ndtv" in link:
+            text = post.xpath('content:encoded//text()',
+                              namespaces={'content': 'http://purl.org/rss/1.0/modules/content/'}) \
+                .extract_first()
+            return remove_html_tags(text)
+        if "timesofindia" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'class': '_s30J'}).text.strip()
+            return div_text
+        if "indiatoday" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div',
+                                 {'class': 'jsx-99cc083358cc2e2d Story_description__fq_4S description'}).text.strip()
+            return div_text
+        if "indianexpress" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'id': 'pcl-full-content'}).text.strip()
+            return div_text
+        if "zeenews" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'class': 'article_content article_description'}).text.strip()
+            return div_text
+        if "news18" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'class': 'jsx-1866577923'}).text.strip()
+            return div_text
+        if "business-standard" in link:
+            page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'class': 'storycontent'}).text.strip()
+            return div_text
+        if "economictimes" in link:
+            page = urlopen(Request("link", headers={'User-Agent': 'Mozilla/5.0'}))
+            html = page.read().decode("utf-8")
+            soup = BeautifulSoup(html, "html.parser")
+            div_text = soup.find('div', {'class': 'artText'}).text.strip()
+            return div_text
+        else:
+            return "NA"
+    except Exception as ex:
+        print(ex, link)
+        return "NA"
+
+
+def getDescription(post, link):
+    try:
+        return remove_html_tags(post.xpath('description//text()').extract_first()).strip()
+    except Exception as ex:
+        print(ex, link)
         return "NA"
 
 
@@ -50,7 +105,7 @@ def prepare(post):
     title = post.xpath('title//text()').extract_first()
     link = post.xpath('link//text()').extract_first()
     pubDate = post.xpath('pubDate//text()').extract_first()
-    text = getText(link)
+    description = getDescription(post, link)
     cleanText = getCleanText(post, link)
 
     return {
@@ -58,7 +113,7 @@ def prepare(post):
         'title': title,
         'link': link,
         'pubDate': pubDate,
-        'raw_text': text,
+        'description': description,
         'clean_text': cleanText,
         'crawlTime': getTimeStamp()
     }
@@ -67,9 +122,7 @@ def prepare(post):
 def getUrls():
     db = mongoConnect()
     coll = db[settings.get("RSS_URLS")]
-    print(coll.find_one())
     dictRSS = coll.find_one()
-    print(dictRSS)
     rss_urls = dictRSS[settings.get("URL_FIELD")]
     return rss_urls
 

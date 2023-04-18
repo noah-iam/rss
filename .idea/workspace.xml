@@ -159,12 +159,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.crawler" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.mongodb_container: Compose Deployment" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.crawler" />
     </list>
     <recent_temporary>
       <list>
