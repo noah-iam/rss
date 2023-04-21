@@ -38,13 +38,9 @@ class RssPipeline:
         self.client.close()
 
     def process_item(self, item, spider):
-
-        try:
-            if self.db[self.collection_name].count_documents({"_id": item["_id"]}) == 0:
-                self.db[self.collection_name].insert_one(item)
-            else:
-                print("Document with _id: {} already exists".format(
-                    item["_id"]))
-        except DuplicateKeyError as e:
-            print("Error: Duplicate key - {}".format(e.details))
+        if self.db[self.collection_name].count_documents({"_id": item["_id"]}) == 0:
+            self.db[self.collection_name].insert_one(item)
+        else:
+            print("Document with _id: {} already exists".format(
+                item["_id"]))
         return item
