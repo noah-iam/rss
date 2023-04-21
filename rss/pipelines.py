@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 import pymongo
+from pymongo.errors import DuplicateKeyError
 
 
 class RssPipeline:
@@ -37,5 +38,13 @@ class RssPipeline:
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(item)
+
+        try:
+            if self.db[self.collection_name].count_documents({"_id": item["_id"]}) == 0:
+                self.db[self.collection_name].insert_one(item)
+            else:
+                print("Document with _id: {} already exists".format(
+                    item["_id"]))
+        except DuplicateKeyError as e:
+            print("Error: Duplicate key - {}".format(e.details))
         return item

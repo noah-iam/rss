@@ -1,8 +1,4 @@
 *.json
-<<<<<<< HEAD
 __pycache__
 *.pyc
 .idea
-=======
-*.pyc
->>>>>>> 83b42a0eb2f452081fc93b2e40460d04f129821f
