@@ -14,7 +14,11 @@ import json
 settings = get_project_settings()
 
 
+from datetime import datetime
+import pytz
+
 def convert_to_mongo_date(date_string):
+
     if date_string is None:
         return None
     elif date_string.endswith('Z'):
@@ -25,22 +29,12 @@ def convert_to_mongo_date(date_string):
 
     elif '+' in date_string or '-' in date_string:
         # If the date string has a timezone offset
-        if '+' in date_string:
-            date_string = date_string.replace('+', '+0', 1)
-        elif '-' in date_string:
-            date_string = date_string.replace('-', '-0', 1)
-        date_format = '%Y-%m-%dT%H:%M:%S%z'
-        try:
-            date = dt.strptime(date_string, date_format)
-        except ValueError:
-            raise ValueError(f"Could not parse date string: {date_string}")
-        date_utc = date.astimezone(pytz.utc)
-        mongo_date = {"$date": date_utc.strftime('%Y-%m-%dT%H:%M:%S.%fZ')}
-        return mongo_date
-
-    else:
-        # If the date string is in the 'Sun, 23 Apr 2023 00:49:12 +0530' format
-        date_formats = ['%a, %d %b %Y %H:%M:%S %z', '%a, %d %b %Y %H:%M:%S %Z']
+        #
+        date_formats = ['%Y-%m-%dT%H:%M:%S%z',
+                        '%Y-%m-%dT%H:%M:%S.%f%z',
+                        '%a, %d %b %Y %H:%M:%S %z', 
+                        '%a, %d %b %Y %H:%M:%S%z',
+                        '%Y-%m-%dT%H:%M:%S%z']
         date = None
         for date_format in date_formats:
             try:
@@ -55,6 +49,25 @@ def convert_to_mongo_date(date_string):
         date_utc = date.astimezone(pytz.utc)
         mongo_date = {"$date": date_utc.strftime('%Y-%m-%dT%H:%M:%S.%fZ')}
         return mongo_date
+
+    else:
+        # If the date string is in the 'Sun, 23 Apr 2023 00:49:12 +0530' format
+        date_formats = ['%a, %d %b %Y %H:%M:%S %z', '%a, %d %b %Y %H:%M:%S.%f %z']
+        date = None
+        for date_format in date_formats:
+            try:
+                date = dt.strptime(date_string, date_format)
+                break
+            except ValueError:
+                pass
+        
+        if date is None:
+            raise ValueError(f"Could not parse date string: {date_string}")
+        
+        date_utc = date.astimezone(pytz.utc)
+        mongo_date = {"$date": date_utc.strftime('%Y-%m-%dT%H:%M:%S.%fZ')}
+        return mongo_date
+
 
 
 def getText(link):
