@@ -15,6 +15,7 @@ conda create --name daily --file requirements.txt
 
 3. 
 conda activate daily
+pip install pytz
 pip install clean-text==0.6.0
 pip install selenium==4.8.0
 
@@ -51,8 +52,6 @@ pip install selenium==4.8.0
 {
     "version": "0.2.0",
     "configurations": [
-    
-
         {
             "name": "Debug crawler.py",
             "type": "python",
