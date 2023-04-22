@@ -46,3 +46,21 @@ pip install selenium==4.8.0
 ## Reference
 > https://doc.scrapy.org/en/latest/index.html
 
+## launch.json 
+
+{
+    "version": "0.2.0",
+    "configurations": [
+    
+
+        {
+            "name": "Debug crawler.py",
+            "type": "python",
+            "request": "launch",
+            "program": "rss/spiders/crawler.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
+
