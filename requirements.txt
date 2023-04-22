@@ -1,5 +1,5 @@
 beautifulsoup4
-clean-text==0.6.0
+# clean-text==0.6.0
 importlib-metadata
 itemadapter
 itemloaders
@@ -7,5 +7,5 @@ itsdangerous
 jsonschema
 pymongo==4.3.3
 Scrapy
-selenium==4.8.0
+# selenium==4.8.0
 feedparser

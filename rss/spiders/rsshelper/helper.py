@@ -43,12 +43,14 @@ def getCleanText(post, link):
                               namespaces={'content': 'http://purl.org/rss/1.0/modules/content/'}) \
                 .extract_first()
             return remove_html_tags(text)
+        
         if "timesofindia" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
             soup = BeautifulSoup(html, "html.parser")
             div_text = soup.find('div', {'class': '_s30J'}).text.strip()
             return div_text
+        
         if "indiatoday" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
@@ -56,30 +58,35 @@ def getCleanText(post, link):
             div_text = soup.find('div',
                                  {'class': 'jsx-99cc083358cc2e2d Story_description__fq_4S description'}).text.strip()
             return div_text
+        
         if "indianexpress" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
             soup = BeautifulSoup(html, "html.parser")
             div_text = soup.find('div', {'id': 'pcl-full-content'}).text.strip()
             return div_text
+        
         if "zeenews" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
             soup = BeautifulSoup(html, "html.parser")
             div_text = soup.find('div', {'class': 'article_content article_description'}).text.strip()
             return div_text
+        
         if "news18" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
             soup = BeautifulSoup(html, "html.parser")
             div_text = soup.find('div', {'class': 'jsx-1866577923'}).text.strip()
             return div_text
+        
         if "business-standard" in link:
             page = urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
             soup = BeautifulSoup(html, "html.parser")
             div_text = soup.find('div', {'class': 'storycontent'}).text.strip()
             return div_text
+        
         if "economictimes" in link:
             page = urlopen(Request("link", headers={'User-Agent': 'Mozilla/5.0'}))
             html = page.read().decode("utf-8")
@@ -88,6 +95,7 @@ def getCleanText(post, link):
             return div_text
         else:
             return "NA"
+        
     except Exception as ex:
         print(ex, link)
         return "NA"

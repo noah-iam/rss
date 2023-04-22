@@ -3,7 +3,20 @@
 1. > pip install pymongo
 2. > pip install scrapy
 3. > pip install < Name of the Module if missing >
-   
+
+## setup using conda environment 
+
+1. Add the conda-forge channel to your Conda configuration:
+conda config --add channels conda-forge
+
+2. Create a new Conda environment with the name daily and install the required packages from requirements.txt:
+
+conda create --name daily --file requirements.txt
+
+3. 
+conda activate daily
+pip install clean-text==0.6.0
+pip install selenium==4.8.0
 
 # Run Scrapy RSS
 
